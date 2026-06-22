@@ -1,0 +1,463 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+* {
+  transition: all 0.5s;
+  box-sizing: border-box;
+}
+
+.light-theme {
+  --body: bisque;
+  --project: #333;
+  --project-background: rgb(244, 241, 241);
+  --project-box-shadow: rgba(31, 38, 135, 0.2);
+  --project-border: rgba(255, 255, 255, 0.18);
+  --project_link-hover: grey;
+  /* --project-hover: #cbc1c1; */
+  --project-hover: #ffffff;
+  /* --project-img-box-shadow: black; */
+  --project-img-box-shadow: rgba(0, 0, 0, 0.161);
+  --project_link: #393535;
+  --button: #333;
+  --dot: rgb(250, 253, 254);
+  --btn-shadow: black;
+  --value: 0px;
+  --scroll-track: bisque;
+  --scroll-thumb: rgba(29, 27, 27, 0.865);
+  --text: black;
+  --text-2: black;
+  --text-3: black;
+}
+.dark-theme {
+  --body: rgba(44, 43, 43, 0.895);
+  --project: white;
+  --project-box-shadow: rgba(58, 68, 181, 0.212);
+  /* --project-background: rgb(0, 0, 0); */
+  --project-background: bisque;
+  --project-border: rgba(52, 51, 51, 0.18);
+  --project_link-hover: rgb(17, 17, 17);
+  --project-hover: #7e787885;
+  --project-img-box-shadow: rgb(117, 114, 114);
+  --project_link: #ffffffdc;
+  --button: rgb(244, 235, 235);
+  --dot: rgba(0, 0, 0, 0.883);
+  --btn-shadow: rgb(223, 204, 204);
+  --value: 2.7vw;
+  --text: bisque;
+  --text-2: white;
+  --text-3: black;
+  --scroll-thumb: bisque;
+  --scroll-track: rgba(29, 27, 27, 0.865);
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  background-color: var(--body);
+  font-family: "Montserrat", sans-serif;
+}
+
+#root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 100%;
+  /* width: 1020px; */
+}
+
+.header {
+  max-width: 1020px;
+  width: 100%;
+  text-align: center;
+  color: var(--project_link);
+}
+
+.about {
+  display: none;
+
+  max-width: 120px;
+  width: 100%;
+  height: 20%;
+  border: 1px solid red;
+  margin: 5% auto;
+  padding: 5% 5%;
+  transition: all 0.5s ease;
+  border: 1px solid#b09b71;
+  background-color: #b09b71;
+  color: #61481c;
+}
+
+.about hr {
+  width: 10%;
+  color: #61481c;
+}
+
+.about h1 {
+  font-family: "Poppins", sans-serif;
+}
+
+.about p {
+  padding-top: 2%;
+  font-size: 25px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.project {
+  border-radius: 15px;
+  color: var(--project);
+  display: flex;
+  font-size: 18px;
+  font-weight: bold;
+  flex-direction: column;
+  text-align: center;
+  margin: 40px;
+  height: 150px;
+  width: 300px;
+  text-decoration: none;
+  transition: 0.3s ease;
+  background: var(--project-background);
+  box-shadow: 0 8px 32px 0 var(--project-box-shadow);
+  backdrop-filter: blur(11px);
+  -webkit-backdrop-filter: blur(11px);
+  border-radius: 10px;
+  border: 1px solid var(--project-border);
+  /* box-shadow: 2px 3px 13px rgb(33, 33, 33); */
+}
+
+.container {
+  opacity: 0;
+}
+
+.links {
+  display: flex;
+  width: 100%;
+  padding: 0 0.5em;
+  justify-content: center;
+  gap: 0.5em;
+}
+
+/* .project_link {
+  border-radius: 5px;
+  padding: .4em .8em;
+  font-size:16px;
+} */
+/* .project_link:hover {
+  box-shadow: 2px 2px 14px var(--project_link-hover); 
+ 
+}*/
+.project:hover {
+  background-color: var(--project-hover);
+  height: 250px;
+  transition: 0.3s;
+  transition: 0.2s;
+}
+.project:hover .container {
+  /* transition: linear .09s; */
+  opacity: 1;
+}
+
+/* .project img {
+ position: relative;
+  height: 150px;
+  width: 150px;
+  object-fit: cover;
+  top: -40px;
+  left: 75px;
+  border-radius: 50px;
+  box-shadow: 2px 2px 15px var(--project-img-box-shadow);
+  margin-bottom: -30px; 
+}*/
+/* .personName {
+  font-size: sans-serif;
+  line-height: 1.2em;
+  font-size: 20px;
+  padding: 0px;
+} */
+.project_link {
+  font-size: serif;
+  line-height: 0.75pm;
+  color: var(--project_link);
+  text-decoration: none;
+  opacity: 0.8;
+}
+.btn {
+  background-color: var(--button);
+  height: 5vh;
+  width: 5vw;
+  position: relative;
+  right: -35vw;
+  border-radius: 30px;
+  box-shadow: 2px 2px 13px var(--btn-shadow);
+}
+.dot {
+  background-attachment: fixed;
+  background-color: var(--dot);
+  height: 5vh;
+  width: 3vw;
+  top: -3px;
+  margin-top: 0px;
+  position: relative;
+  transform: translateX(var(--value));
+  right: 1vw;
+  z-index: 2;
+  border-radius: 30px;
+  border: 1.5px solid black;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background-color: var(--scroll-track);
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--scroll-thumb);
+  background-clip: content-box;
+  border: 3px solid transparent;
+  border-radius: 15px;
+}
+
+/* ------------Navbar --------------------------- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+}
+
+.navbar .title {
+  text-align: center;
+}
+
+/* Responsiveness */
+@media only screen and (min-width: 1040px) {
+  .about {
+    border-radius: 15px;
+    box-shadow: 0 8px 32px 0 #61481c;
+  }
+}
+/* faq */
+.faq {
+  padding: 0 95px;
+  margin: 20px 0px 40px 0px;
+  border-radius: 10px;
+}
+.faq-title h2 {
+  font-weight: 700;
+  padding-bottom: 20px;
+  color: #6666;
+  text-decoration: underline;
+  text-underline-position: under;
+}
+.row-title-text {
+  color: rgb(4, 80, 4);
+  font-weight: 500;
+}
+.styles_row-content-text__2sgAB {
+  margin: 0 20px;
+}
+.faq-row-wrapper {
+  border-radius: 10px;
+}
+.styles_faq-row-wrapper__3vA1D {
+  padding: 10px 20px;
+}
+
+/* footer */
+.footer-distributed {
+  background: #444;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  width: 100%;
+  font: bold 16px sans-serif;
+  text-align: left;
+  padding: 50px 60px 40px;
+  overflow: hidden;
+}
+
+/* Footer left */
+
+.footer-distributed .footer-left {
+  float: left;
+}
+
+/* The company logo */
+
+.footer-distributed h3 {
+  color: #ffffff;
+  font: normal 36px "Roboto", cursive;
+  margin: 0 0 10px;
+}
+
+.footer-distributed h3 span {
+  color: #5383d3;
+}
+
+/* Footer links */
+
+.footer-distributed .footer-links {
+  color: #ffffff;
+  margin: 0 0 10px;
+  padding: 0;
+}
+
+.footer-distributed .footer-links a {
+  display: inline-block;
+  line-height: 1.8;
+  text-decoration: none;
+  color: inherit;
+}
+
+.footer-distributed .footer-company-name {
+  color: #8f9296;
+  font-size: 14px;
+  font-weight: normal;
+  margin: 0;
+}
+
+/* Footer social icons */
+
+.footer-distributed .footer-icons {
+  margin-top: 40px;
+}
+
+.footer-distributed .footer-icons a {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  background-color: #33383b;
+  border-radius: 2px;
+
+  font-size: 20px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 35px;
+
+  margin-right: 3px;
+  margin-bottom: 5px;
+}
+
+/* Footer Right */
+
+.footer-distributed .footer-right {
+  float: right;
+}
+
+.footer-distributed .footer-right p {
+  display: inline-block;
+  vertical-align: top;
+  margin: 15px 42px 0 0;
+  color: #ffffff;
+}
+
+/* The contact form */
+
+.footer-distributed form {
+  display: inline-block;
+}
+
+.footer-distributed form input,
+.footer-distributed form textarea {
+  display: block;
+  border-radius: 3px;
+  box-sizing: border-box;
+  background-color: #1f2022;
+  box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.1);
+  border: none;
+  resize: none;
+
+  font: inherit;
+  font-size: 14px;
+  font-weight: normal;
+  color: #d1d2d2;
+
+  width: 400px;
+  padding: 18px;
+}
+
+.footer-distributed ::-webkit-input-placeholder {
+  color: #5c666b;
+}
+
+.footer-distributed ::-moz-placeholder {
+  color: #5c666b;
+  opacity: 1;
+}
+
+.footer-distributed :-ms-input-placeholder {
+  color: #5c666b;
+}
+
+.footer-distributed form input {
+  height: 55px;
+  margin-bottom: 15px;
+}
+
+.footer-distributed form textarea {
+  height: 100px;
+  margin-bottom: 20px;
+}
+
+.footer-distributed form button {
+  border-radius: 3px;
+  background-color: #33383b;
+  color: #ffffff;
+  border: 0;
+  padding: 15px 50px;
+  font-weight: bold;
+  float: right;
+}
+
+/* If you don't want the footer to be responsive, remove these media queries */
+
+@media (max-width: 1000px) {
+  .footer-distributed {
+    font: bold 14px sans-serif;
+  }
+
+  .footer-distributed .footer-company-name {
+    font-size: 12px;
+  }
+
+  .footer-distributed form input,
+  .footer-distributed form textarea {
+    width: 250px;
+  }
+
+  .footer-distributed form button {
+    padding: 10px 35px;
+  }
+}
+
+@media (max-width: 800px) {
+  .footer-distributed {
+    padding: 30px;
+  }
+
+  .footer-distributed .footer-left,
+  .footer-distributed .footer-right {
+    float: none;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .footer-distributed .footer-left {
+    margin-bottom: 40px;
+  }
+
+  .footer-distributed form {
+    margin-top: 30px;
+  }
+
+  .footer-distributed form {
+    display: block;
+  }
+
+  .footer-distributed form button {
+    float: none;
+  }
+}
